@@ -14,14 +14,12 @@
 #'   An error message is returned if the file does not exist.
 #'
 #' @param filename The desired filename to be read.
-#' @inheritParams
 #' @return object of class tbl_df
 #'
-#' @import readr dplyr
-#'
 #' @examples
-#' fars_read()
+#' \dontrun{
 #' fars_read("accident_2015.csv.bz2")
+#' }
 #'
 #' @export
 fars_read <- function(filename) {
@@ -41,12 +39,12 @@ fars_read <- function(filename) {
 #'   An error will occur if the year parameter cannot be coerced into an integer.
 #'
 #' @param year The year
-#' @inheritParams
 #' @return string in the form of "accident_YYYY.csv.bz2"
 #'
 #' @examples
-#' make_filename()
-#' make_filename("2016")
+#' \dontrun{
+#' make_filename(2016)
+#' }
 #'
 #' @export
 make_filename <- function(year) {
@@ -59,17 +57,18 @@ make_filename <- function(year) {
 #' Read multiple FARS files
 #'
 #' This function creates a tbl_df object from multiple files using a list of years as the function argument.
-#'   Prints the resulting tbl_df a side-effect. An error message "Invalid Year: <value>" is returned if
+#'   Prints the resulting tbl_df a side-effect. An error message Invalid Year: <value> is returned if
 #'   the provided year is not between 2013 and 2015.
 #'
 #' @param years A vector of years.
-#' @inheritParams
 #' @return A tbl_df with the month and year for each of the years that were specified in the function argument.
 #'   Prints the tbl_df as a side-effect.
 #'
 #' @examples
-#' fars_read_years()
+#' \dontrun{
+#' fars_read_years(2013)
 #' fars_read_years(c(2013, 2014, 2015))
+#' }
 #'
 #' @export
 fars_read_years <- function(years) {
@@ -91,16 +90,19 @@ fars_read_years <- function(years) {
 
 #' Summarizes fars data by year
 #'
-#' This function creates a tbl_df object with the number of records for each month by year.
-#'   Returns an error message of 'Invalid year: <value>" if the year value is not between 2013-2015.
+#' This function creates a tbl_df object with the
+#' number of records for each month by year. Returns
+#' an error message of Invalid year: <value> if the
+#' year value is not between 2013-2015.
 #'
 #' @param years A vector of years.
-#' @inheritParams
 #' @return A tbl_df of the the number of records for each month by year. Prints the tbl_df as a side-effect.
 #'
 #' @examples
-#' fars_summarize_years()
-#' fars_summarize_years(c("2013", 2014", "2015"))
+#' \dontrun{
+#' fars_summarize_years(2013)
+#' fars_summarize_years(c(2013, 2014, 2015))
+#' }
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -117,20 +119,21 @@ fars_summarize_years <- function(years) {
 #' Map with accident locations
 #'
 #' This function creates a map of the accident locations for a given state and year.
-#'   Returns an error message of "Invalid year: <value>" if the year value
-#'   is not between 2013-2015. Returns an error message of "Invalid STATE number:"
+#'   Returns an error message of Invalid year: <value> if the year value
+#'   is not between 2013-2015. Returns an error message of Invalid STATE number:
 #'   if the state number is not one of the States included in the data.
-#'   Returns an error of "no accidents to plot" if there are no accidents for the
+#'   Returns an error of no accidents to plot if there are no accidents for the
 #'   specified state number and year.
 #'
 #' @param state.num Integer value between 0 and 50.
 #' @param year The year
-#' @inheritParams
 #' @return a map object. Prints the map as a side-effect.
 #'
 #' @examples
-#' fars_map_state()
+#' \dontrun{
+#' fars_map_state(1, 2014)
 #' fars_map_state(20, 2015)
+#' }
 #'
 #' @export
 fars_map_state <- function(state.num, year) {

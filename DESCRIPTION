@@ -1,9 +1,15 @@
 Package: FARSmap
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Maps for the Federal Accident Reporting System
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Rollie Parrish
+Maintainer: Rollie Parrish <rparrish@flightweb.com>
+Description: This package generates a map of accident locations by state from the Federal Accicent Reporting System (FARS).
+License: MIT + file LICENSE
 LazyData: TRUE
+Imports:
+  dplyr,
+  maps,
+  readr,
+  tidyr
+RoxygenNote: 5.0.1
