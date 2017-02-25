@@ -1,4 +1,4 @@
-library(testthat)
-library(FARSmap)
+#library(testthat)
+#library(FARSmap)
 
-test_check("FARSmap")
+#test_check("FARSmap")
